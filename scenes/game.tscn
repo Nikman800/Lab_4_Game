@@ -413,9 +413,11 @@ format = 2
 layer_0/tile_data = PackedInt32Array(65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, -131069, 0, 0, -131068, 0, 0, -65540, 0, 0, -65541, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 20, 0, 0, 21, 0, 0, 22, 0, 0, 23, 0, 0, -262137, 0, 0, -262136, 0, 0, -65524, 0, 5, -131060, 0, 4, -196596, 0, 4, -262132, 0, 4, -327668, 0, 4, -393204, 0, 3)
 
 [node name="Player" parent="." instance=ExtResource("1_ppmqx")]
+z_index = 5
 position = Vector2(1, -10)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -8)
 zoom = Vector2(4, 4)
+limit_bottom = 120
 position_smoothing_enabled = true
