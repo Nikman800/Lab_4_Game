@@ -4,12 +4,33 @@ extends CharacterBody2D
 const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
 
+# Declare member variables
+var dash_speed = 500 
+var dash_time = 0.3  
+var is_dashing = false
+var dash_direction = Vector2.ZERO
+var remaining_dash_time = 0.0
+
+# Boost meter variables
+var max_boost = 100.0
+var current_boost = max_boost
+var boost_regen_rate = 25.0  # Boost regeneration per second
+var boost_cost = 30.0       # Boost consumed per dash
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var animated_sprite = $AnimatedSprite2D
 
 func _physics_process(delta):
+	# Ground check
+	var is_grounded = is_on_floor()
+	
+	# Regenerate boost if grounded and not full
+	if is_grounded and current_boost < max_boost:
+		current_boost += boost_regen_rate * delta
+		current_boost = clamp(current_boost, 0.0, max_boost)
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -17,8 +38,41 @@ func _physics_process(delta):
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-
 	
+	
+	if Input.is_action_pressed("dash") and not is_dashing and current_boost >= boost_cost:
+		# Initiate dash
+		is_dashing = true
+		remaining_dash_time = dash_time
+		current_boost -= boost_cost
+		
+		# Get input direction (normalize for consistent speed)
+		dash_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down").normalized()
+
+		# Set velocity directly for CharacterBody2D
+		#self.velocity = dash_direction * dash_speed
+		
+	if is_dashing:
+		# Update remaining dash time
+		remaining_dash_time -= delta
+
+		# Calculate movement for this frame
+		velocity.y = 0  # Reset vertical velocity
+		var motion = dash_direction * dash_speed * delta 
+
+		# Move and collide
+		move_and_collide(motion)
+
+		# Allow player to influence trajectory during the dash
+		var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+		if input_direction != Vector2.ZERO:
+			dash_direction = dash_direction.lerp(input_direction.normalized(), 0.2)
+
+		# End dash when time runs out
+		if remaining_dash_time <= 0:
+			is_dashing = false
+			dash_direction = Vector2.ZERO
+			
 	
 	# Get the input direction: -1, 0, 1
 	var direction = Input.get_axis("move_left", "move_right")
