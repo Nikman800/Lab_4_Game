@@ -55,12 +55,14 @@ func _physics_process(delta):
 	# Ground check
 	var is_grounded = is_on_floor()
 	
-	# Regenerate boost if grounded and not full
-	if is_grounded and current_boost < max_boost:
-		current_boost += boost_regen_rate * delta
-		current_boost = clamp(current_boost, 0.0, max_boost)
+	#Store previous boost value
+	var previous_boost = current_boost
 	
-	dashChanged.emit()
+	
+
+	
+	#if current_boost != previous_boost:
+		#dashChanged.emit(current_boost)
 	
 	# Add the gravity.
 	if not is_on_floor():
@@ -104,8 +106,21 @@ func _physics_process(delta):
 			is_dashing = false
 			dash_direction = Vector2.ZERO
 		
-		dashChanged.emit()
+		#dashChanged.emit(current_boost)
 			
+			
+	
+	
+	# Regenerate boost if grounded and not full
+	if is_grounded and current_boost < max_boost:
+		current_boost += boost_regen_rate * delta
+		current_boost = clamp(current_boost, 0.0, max_boost)
+		
+	# Emit dashChanged signal only if boost has changed
+	if current_boost != previous_boost:
+		dashChanged.emit(current_boost)
+		
+
 	
 	# Get the input direction: -1, 0, 1
 	var direction = Input.get_axis("move_left", "move_right")
@@ -125,19 +140,12 @@ func _physics_process(delta):
 		animated_sprite.play("jump")
 	
 	
-	
-	
 	if direction:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
-	
-	# Example: Taking damage from an Area2D with a CollisionShape2D
-	#for area in has_overlapping_bodies():
-		#if area.name == "DamageArea":
-			#take_damage(1)  # Adjust damage amount as needed
 
 
 func _on_timer_timeout():
