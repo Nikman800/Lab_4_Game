@@ -188,4 +188,5 @@ shape = SubResource("CircleShape2D_jexsp")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.6
 
+[connection signal="healthChanged" from="." to="." method="_on_health_changed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

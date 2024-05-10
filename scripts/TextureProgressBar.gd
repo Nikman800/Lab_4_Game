@@ -1,12 +1,13 @@
 extends TextureProgressBar
 
 @onready var player = %Player
+#@export var player: Player
 
 
 func _ready():
-	#player.healthChanged.connect(update())
-	player.healthChanged.connect(self.update)  # Pass the function itself
+	if player != null:
+		player.healthChanged.connect(self.update) 
+		value = player.current_health * 100 / player.max_health  # Set initial value
 
 func update():
 	value = player.current_health * 100 / player.max_health
-	

@@ -33,7 +33,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func take_damage(amount):
 	current_health -= amount
 	current_health = clamp(current_health, 0, max_health)
-	emit_signal("healthChanged", current_health)  # Notify about health change
+	healthChanged.emit()
+	#emit_signal("healthChanged", current_health)  # Notify about health change
 	print("health is now " + str(current_health))
 
 	if current_health <= 0:
@@ -137,3 +138,8 @@ func _physics_process(delta):
 func _on_timer_timeout():
 	Engine.time_scale = 1.0
 	get_tree().reload_current_scene()
+	
+func _ready():
+	healthChanged.emit()
+	
+
