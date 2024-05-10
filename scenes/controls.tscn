@@ -24,4 +24,27 @@ layout_mode = 2
 text = "Back
 "
 
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 0
+offset_left = 290.0
+offset_top = 78.0
+offset_right = 449.0
+offset_bottom = 231.0
+
+[node name="Label" type="Label" parent="AspectRatioContainer"]
+layout_mode = 2
+text = "Regular:
+Left: a
+Right: d
+Jump: spacebar
+
+Dashing (holding 'z'):
+Up: w
+Down: s
+Left: a
+Right: d
+
+When dashing on the ground, your dash bar does not decrease.
+"
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
