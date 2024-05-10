@@ -7,8 +7,8 @@ func _on_body_entered(body):
 		body.take_damage(1)  # Adjust damage amount as needed
 	
 	
-	#body.get_node("CollisionShape2D").queue_free()
-	#timer.start()
+	body.get_node("CollisionShape2D").queue_free()
+	timer.start()
 	
 
 
