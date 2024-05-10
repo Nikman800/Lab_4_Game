@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var timer = $Timer
+
 
 const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
@@ -17,10 +19,35 @@ var current_boost = max_boost
 var boost_regen_rate = 25.0  # Boost regeneration per second
 var boost_cost = 30.0       # Boost consumed per dash
 
+#Health bar variables:
+var max_health = 3
+var current_health = max_health  # Initialize with full health
+
+signal healthChanged
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var animated_sprite = $AnimatedSprite2D
+
+func take_damage(amount):
+	current_health -= amount
+	current_health = clamp(current_health, 0, max_health)
+	emit_signal("healthChanged", current_health)  # Notify about health change
+	print("health is now " + str(current_health))
+
+	if current_health <= 0:
+		# Handle player death (e.g., game over, respawn)
+		print("Player has died!")  # Replace with your death logic
+		Engine.time_scale = 0.5
+		# Get and queue the CollisionShape2D for deletion
+		var collision_shape = get_node("CollisionShape2D")  # Assuming it's a direct child
+		collision_shape.queue_free()
+		timer.start()
+		
+
+	
+		
 
 func _physics_process(delta):
 	# Ground check
@@ -100,3 +127,13 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+	
+	# Example: Taking damage from an Area2D with a CollisionShape2D
+	#for area in has_overlapping_bodies():
+		#if area.name == "DamageArea":
+			#take_damage(1)  # Adjust damage amount as needed
+
+
+func _on_timer_timeout():
+	Engine.time_scale = 1.0
+	get_tree().reload_current_scene()
