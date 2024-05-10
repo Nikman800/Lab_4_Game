@@ -1,7 +1,6 @@
 extends TextureProgressBar
 
 @onready var player = %Player
-#@export var player: Player
 
 
 func _ready():

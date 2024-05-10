@@ -7,7 +7,7 @@ const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
 
 # Declare member variables
-var dash_speed = 500 
+var dash_speed = 200 
 var dash_time = 0.3  
 var is_dashing = false
 var dash_direction = Vector2.ZERO
@@ -16,7 +16,7 @@ var remaining_dash_time = 0.0
 # Boost meter variables
 var max_boost = 100.0
 var current_boost = max_boost
-var boost_regen_rate = 25.0  # Boost regeneration per second
+var boost_regen_rate = 100.0  # Boost regeneration per second
 var boost_cost = 30.0       # Boost consumed per dash
 
 #Health bar variables:
@@ -24,6 +24,7 @@ var max_health = 3
 var current_health = max_health  # Initialize with full health
 
 signal healthChanged
+signal dashChanged
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -58,6 +59,8 @@ func _physics_process(delta):
 	if is_grounded and current_boost < max_boost:
 		current_boost += boost_regen_rate * delta
 		current_boost = clamp(current_boost, 0.0, max_boost)
+	
+	dashChanged.emit()
 	
 	# Add the gravity.
 	if not is_on_floor():
@@ -100,6 +103,8 @@ func _physics_process(delta):
 		if remaining_dash_time <= 0:
 			is_dashing = false
 			dash_direction = Vector2.ZERO
+		
+		dashChanged.emit()
 			
 	
 	# Get the input direction: -1, 0, 1
@@ -141,5 +146,6 @@ func _on_timer_timeout():
 	
 func _ready():
 	healthChanged.emit()
+	dashChanged.emit()
 	
 
