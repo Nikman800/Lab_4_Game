@@ -15,7 +15,12 @@ var remaining_dash_time = 0.0
 var max_boost = 100.0
 var current_boost = max_boost
 var boost_regen_rate = 25.0  # Boost regeneration per second
-var boost_cost = 30.0       # Boost consumed per dash
+var boost_cost = 30.0   # Boost consumed per dash
+
+var maxHealth = 3   #Heath statistics
+var currentHealth = 3
+
+signal healthChanged
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")

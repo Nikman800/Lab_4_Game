@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ce7c6q1u36skb"]
+[gd_scene load_steps=17 format=3 uid="uid://ce7c6q1u36skb"]
 
 [ext_resource type="Script" path="res://scripts/gamemanager.gd" id="1_bwdrg"]
 [ext_resource type="PackedScene" uid="uid://buqsspxla075q" path="res://scenes/player.tscn" id="1_ppmqx"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b631raxidnram" path="res://scenes/killzone.tscn" id="5_3bfb2"]
 [ext_resource type="PackedScene" uid="uid://cksv6cdu5jsuf" path="res://scenes/slime.tscn" id="6_t6yhu"]
 [ext_resource type="FontFile" uid="uid://d3jgitdt1fg3a" path="res://assets/fonts/PixelOperator8.ttf" id="7_qkuha"]
+[ext_resource type="Script" path="res://scripts/healthbar.gd" id="10_2cutq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fk1l3"]
 texture = ExtResource("2_eqwxu")
@@ -479,6 +480,7 @@ layer_1/name = "Mid"
 layer_1/tile_data = PackedInt32Array(65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, -131069, 0, 0, -131068, 0, 0, -65540, 0, 0, -65541, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 20, 0, 0, 21, 0, 0, 22, 0, 0, 23, 0, 0, -262137, 0, 0, -262136, 0, 0, -65524, 0, 5, -131060, 0, 4, -196596, 0, 4, -262132, 0, 4, -327668, 0, 4, -393204, 0, 3, 36, 0, 0, 37, 0, 0, 38, 0, 0, 39, 0, 0, 40, 0, 0, -65520, 0, 0, -65513, 0, 0)
 
 [node name="Player" parent="." instance=ExtResource("1_ppmqx")]
+unique_name_in_owner = true
 z_index = 5
 position = Vector2(1, -10)
 
@@ -545,3 +547,10 @@ offset_bottom = -58.0
 theme_override_fonts/font = ExtResource("7_qkuha")
 theme_override_font_sizes/font_size = 8
 text = "Space to jump."
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Healthbar" type="ProgressBar" parent="CanvasLayer"]
+offset_right = 34.0
+offset_bottom = 27.0
+script = ExtResource("10_2cutq")
