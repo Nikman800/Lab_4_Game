@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://ce7c6q1u36skb"]
+[gd_scene load_steps=18 format=3 uid="uid://ce7c6q1u36skb"]
 
 [ext_resource type="Script" path="res://scripts/gamemanager.gd" id="1_30nue"]
 [ext_resource type="PackedScene" uid="uid://buqsspxla075q" path="res://scenes/player.tscn" id="1_ppmqx"]
@@ -11,8 +11,6 @@
 [ext_resource type="Script" path="res://scripts/TextureProgressBar.gd" id="9_k6s0f"]
 [ext_resource type="Texture2D" uid="uid://ba4q06568xka8" path="res://assets/healthbar/healthbarUnder.png" id="9_o5jqk"]
 [ext_resource type="Texture2D" uid="uid://bnx56edgawd3e" path="res://assets/healthbar/healthbarProgress.png" id="10_qihcm"]
-[ext_resource type="Texture2D" uid="uid://mjl4fmnf30mn" path="res://assets/healthbar/dashbarProgress.png" id="12_leutx"]
-[ext_resource type="Script" path="res://scripts/Dashbar.gd" id="13_7yexo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fk1l3"]
 texture = ExtResource("2_eqwxu")
@@ -547,19 +545,11 @@ position = Vector2(295, 0)
 [node name="Node2D" type="Node2D" parent="CanvasLayer"]
 scale = Vector2(4, 4)
 
-[node name="Healthbar" type="TextureProgressBar" parent="CanvasLayer/Node2D"]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer/Node2D"]
 offset_right = 64.0
 offset_bottom = 40.0
 texture_under = ExtResource("9_o5jqk")
 texture_progress = ExtResource("10_qihcm")
 script = ExtResource("9_k6s0f")
 
-[node name="Dashbar" type="TextureProgressBar" parent="CanvasLayer/Node2D"]
-offset_top = 10.25
-offset_right = 64.0
-offset_bottom = 50.25
-texture_under = ExtResource("9_o5jqk")
-texture_progress = ExtResource("12_leutx")
-script = ExtResource("13_7yexo")
-
-[connection signal="healthChanged" from="Player" to="CanvasLayer/Node2D/Healthbar" method="_on_player_health_changed"]
+[connection signal="healthChanged" from="Player" to="CanvasLayer/Node2D/TextureProgressBar" method="_on_player_health_changed"]
