@@ -1,7 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://ce7c6q1u36skb"]
+[gd_scene load_steps=15 format=3 uid="uid://ce7c6q1u36skb"]
 
+[ext_resource type="Script" path="res://scripts/gamemanager.gd" id="1_30nue"]
 [ext_resource type="PackedScene" uid="uid://buqsspxla075q" path="res://scenes/player.tscn" id="1_ppmqx"]
 [ext_resource type="Texture2D" uid="uid://8rh8vh2psuxg" path="res://assets/sprites/world_tileset.png" id="2_eqwxu"]
+[ext_resource type="FontFile" uid="uid://c8fofbwnvgu4f" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_yt62v"]
 [ext_resource type="PackedScene" uid="uid://dwfjvdh2j2ero" path="res://scenes/platform.tscn" id="3_v7s5c"]
 [ext_resource type="PackedScene" uid="uid://bybwh5jjgsgkl" path="res://scenes/coin.tscn" id="4_w0ket"]
 [ext_resource type="PackedScene" uid="uid://b631raxidnram" path="res://scenes/killzone.tscn" id="5_3bfb2"]
@@ -452,6 +454,21 @@ _data = {
 
 [node name="Game" type="Node2D"]
 
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_30nue")
+
+[node name="ScoreLabel" type="Label" parent="GameManager"]
+offset_left = 535.0
+offset_top = -45.0
+offset_right = 697.0
+offset_bottom = -21.0
+theme_override_fonts/font = ExtResource("2_yt62v")
+theme_override_font_sizes/font_size = 8
+text = "You collected X coins"
+horizontal_alignment = 1
+autowrap_mode = 2
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_pr48e")
 format = 2
@@ -516,3 +533,5 @@ autoplay = "move"
 
 [node name="Slime" parent="." instance=ExtResource("6_bvobh")]
 position = Vector2(295, 0)
+
+[node name="Labels" type="Node" parent="."]
