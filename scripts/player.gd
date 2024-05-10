@@ -7,17 +7,18 @@ const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
 
 # Declare member variables
-var dash_speed = 200 
+var dash_speed = 175 
 var dash_time = 0.3  
 var is_dashing = false
 var dash_direction = Vector2.ZERO
 var remaining_dash_time = 0.0
+var dash_depletion_rate = 100  # Adjust this value to control depletion speed
 
 # Boost meter variables
 var max_boost = 100.0
 var current_boost = max_boost
 var boost_regen_rate = 100.0  # Boost regeneration per second
-var boost_cost = 30.0       # Boost consumed per dash
+#var boost_cost = 30.0       # Boost consumed per dash
 
 #Health bar variables:
 var max_health = 3
@@ -58,12 +59,6 @@ func _physics_process(delta):
 	#Store previous boost value
 	var previous_boost = current_boost
 	
-	
-
-	
-	#if current_boost != previous_boost:
-		#dashChanged.emit(current_boost)
-	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -73,54 +68,44 @@ func _physics_process(delta):
 		velocity.y = JUMP_VELOCITY
 	
 	
-	if Input.is_action_pressed("dash") and not is_dashing and current_boost >= boost_cost:
-		# Initiate dash
+	# Dash Input Check
+	if Input.is_action_pressed("dash") and current_boost > 0: 
+		# Initiate dash ONLY when the button is pressed AND there's enough boost
 		is_dashing = true
-		remaining_dash_time = dash_time
-		current_boost -= boost_cost
-		
-		# Get input direction (normalize for consistent speed)
 		dash_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down").normalized()
-
-		# Set velocity directly for CharacterBody2D
-		#self.velocity = dash_direction * dash_speed
+		dashChanged.emit(current_boost)  # Emit signal before deducting cost
+		#current_boost -= dash_depletion_rate * delta # Deplete boost based on rate and delta time
+		#current_boost -= boost_cost     # Deduct cost after emitting signal
+	else:
+		# Stop dashing if the button is released
+		is_dashing = false
 		
-	if is_dashing:
-		# Update remaining dash time
-		remaining_dash_time -= delta
-
-		# Calculate movement for this frame
-		velocity.y = 0  # Reset vertical velocity
+	if is_dashing: 
+		# Apply dash movement
+		velocity.y = 0 
 		var motion = dash_direction * dash_speed * delta 
-
-		# Move and collide
 		move_and_collide(motion)
 
-		# Allow player to influence trajectory during the dash
+		# Allow player to influence trajectory
 		var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 		if input_direction != Vector2.ZERO:
 			dash_direction = dash_direction.lerp(input_direction.normalized(), 0.2)
 
-		# End dash when time runs out
-		if remaining_dash_time <= 0:
-			is_dashing = false
-			dash_direction = Vector2.ZERO
-		
-		#dashChanged.emit(current_boost)
-			
-			
-	
-	
+		#current_boost -= 1  # Adjust how fast boost decreases
+		current_boost -= dash_depletion_rate * delta # Deplete boost based on rate and delta time
+		current_boost = clamp(current_boost, 0, max_boost)  # Clamp boost to zero
+
+		#dashChanged.emit(current_boost) 
+
 	# Regenerate boost if grounded and not full
 	if is_grounded and current_boost < max_boost:
 		current_boost += boost_regen_rate * delta
 		current_boost = clamp(current_boost, 0.0, max_boost)
 		
-	# Emit dashChanged signal only if boost has changed
-	if current_boost != previous_boost:
-		dashChanged.emit(current_boost)
-		
-
+	# Emit dashChanged signal ONLY if boost has changed significantly
+	if abs(current_boost - previous_boost) >= 0.1:  # Adjust the threshold as needed
+		dashChanged.emit(current_boost) 
+		print(current_boost)
 	
 	# Get the input direction: -1, 0, 1
 	var direction = Input.get_axis("move_left", "move_right")
@@ -154,6 +139,6 @@ func _on_timer_timeout():
 	
 func _ready():
 	healthChanged.emit()
-	dashChanged.emit()
+	dashChanged.emit(current_boost)
 	
 
