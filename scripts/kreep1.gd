@@ -48,18 +48,22 @@ func _physics_process(delta):
 			rotate(deg_to_rad(90))
 			x_direction = 0
 			y_direction = -1
+			position.x -= 3
 		elif x_direction == 0 and y_direction == -1:
 			rotate(deg_to_rad(90))  # Rotate 90 degrees anticlockwise
 			x_direction = 1
 			y_direction = 0
+			position.y -= 3
 		elif x_direction == 1 and y_direction == 0:
 			rotate(deg_to_rad(90))  # Rotate 90 degrees anticlockwise
 			x_direction = 0
 			y_direction = 1
+			position.x += 3
 		elif x_direction == 0 and y_direction == 1:
 			rotate(deg_to_rad(90))  # Rotate 90 degrees anticlockwise
 			x_direction = -1
 			y_direction = 0
+			position.y += 3
 		
 
 	# Delay movement after rotation
@@ -72,10 +76,6 @@ func _physics_process(delta):
 
 	# Move the enemy
 	move_and_slide()
-
-	# Update animation based on direction
-	#animated_sprite.flip_h = x_direction == -1
-	#animated_sprite.flip_v = y_direction == -1
 		
 	# Store the previous state to detect changes
 	was_hitting_left_wall = ray_cast_left.is_colliding()
