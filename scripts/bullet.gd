@@ -1,6 +1,6 @@
 extends Area2D
 
-var speed : int = 200
+var speed : int = 150
 var direction : Vector2
 
 
@@ -19,3 +19,5 @@ func _on_timer_timeout():
 
 func _on_body_entered(body):
 	print(body.name)
+	if body.has_method("take_damage") and body.name == "Player":
+		body.take_damage(1)  # Adjust damage amount as needed
