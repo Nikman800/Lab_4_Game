@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://kdu57xbudxj6"]
 
 [ext_resource type="Script" path="res://scripts/kreep2.gd" id="1_msxjb"]
-[ext_resource type="PackedScene" uid="uid://bfre8gl33k8pr" path="res://scenes/bullet.tscn" id="2_ffxdo"]
+[ext_resource type="PackedScene" uid="uid://bfre8gl33k8pr" path="res://scenes/bullet1.tscn" id="2_ffxdo"]
 [ext_resource type="PackedScene" uid="uid://brnbw331wd8rw" path="res://scenes/hurtzone.tscn" id="3_mp436"]
 [ext_resource type="Texture2D" uid="uid://4l2yddxh6ckw" path="res://assets/sprites/slime_green.png" id="4_ishxg"]
 

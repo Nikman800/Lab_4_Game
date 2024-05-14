@@ -1,0 +1,126 @@
+[gd_scene load_steps=18 format=3 uid="uid://g2v7mnl0ofbq"]
+
+[ext_resource type="Script" path="res://scripts/kreepboss.gd" id="1_qghje"]
+[ext_resource type="PackedScene" uid="uid://bfre8gl33k8pr" path="res://scenes/bullet1.tscn" id="2_w4gjw"]
+[ext_resource type="PackedScene" uid="uid://dxmpmx7x06kxv" path="res://scenes/bullet2.tscn" id="3_aj37v"]
+[ext_resource type="PackedScene" uid="uid://brnbw331wd8rw" path="res://scenes/hurtzone.tscn" id="3_wrjej"]
+[ext_resource type="PackedScene" uid="uid://b61cl5bx3pb4i" path="res://scenes/bullet3.tscn" id="4_417gs"]
+[ext_resource type="Texture2D" uid="uid://b3xc0vsro42ym" path="res://assets/sprites/grenade-guy-sheet-alpha.png" id="4_osdcq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrdgp"]
+size = Vector2(27, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n5vsi"]
+atlas = ExtResource("4_osdcq")
+region = Rect2(0, 32, 36, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5dfh"]
+atlas = ExtResource("4_osdcq")
+region = Rect2(36, 32, 36, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gba57"]
+atlas = ExtResource("4_osdcq")
+region = Rect2(72, 32, 36, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kxp1d"]
+atlas = ExtResource("4_osdcq")
+region = Rect2(108, 32, 36, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skyyf"]
+atlas = ExtResource("4_osdcq")
+region = Rect2(144, 32, 36, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_708ip"]
+atlas = ExtResource("4_osdcq")
+region = Rect2(180, 32, 36, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tplk7"]
+atlas = ExtResource("4_osdcq")
+region = Rect2(216, 32, 36, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmc7r"]
+atlas = ExtResource("4_osdcq")
+region = Rect2(252, 32, 36, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_143u1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n5vsi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m5dfh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gba57")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kxp1d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skyyf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_708ip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tplk7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmc7r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ikcpy"]
+size = Vector2(27, 31)
+
+[node name="Kreep" type="CharacterBody2D"]
+script = ExtResource("1_qghje")
+bullet_scene = ExtResource("2_w4gjw")
+bullet_scene2 = ExtResource("3_aj37v")
+bullet_scene3 = ExtResource("4_417gs")
+
+[node name="Hurtzone" parent="." instance=ExtResource("3_wrjej")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtzone"]
+position = Vector2(0.5, -15.5)
+shape = SubResource("RectangleShape2D_xrdgp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_143u1")
+autoplay = "default"
+frame_progress = 0.32323
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(0, -15)
+target_position = Vector2(17, 0)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(0, -15)
+target_position = Vector2(-17, -1)
+
+[node name="RayCastDown" type="RayCast2D" parent="."]
+position = Vector2(0, -15)
+target_position = Vector2(0, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -15.5)
+shape = SubResource("RectangleShape2D_ikcpy")
+
+[node name="Bullet1Timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="Bullet2Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="Bullet3Timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[connection signal="shoot" from="." to="." method="_on_shoot"]
+[connection signal="timeout" from="Bullet1Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Bullet2Timer" to="." method="_on_bullet_2_timer_timeout"]
+[connection signal="timeout" from="Bullet3Timer" to="." method="_on_bullet_3_timer_timeout"]
