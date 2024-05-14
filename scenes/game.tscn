@@ -580,3 +580,5 @@ position = Vector2(-183, -192)
 
 [connection signal="healthChanged" from="Player" to="CanvasLayer/Node2D/Healthbar" method="_on_player_health_changed"]
 [connection signal="shoot" from="Kreep" to="BulletManager" method="_on_kreep_shoot"]
+[connection signal="shoot" from="Kreep2" to="BulletManager" method="_on_kreep_2_shoot"]
+[connection signal="shoot" from="Kreep3" to="BulletManager" method="_on_kreep_3_shoot"]

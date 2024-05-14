@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var timer = $Timer
 
+@export var bullet_scene : PackedScene
 
 const SPEED = 60
 
@@ -43,9 +44,22 @@ func take_damage(amount):
 		var collision_shape = get_node("CollisionShape2D")  # Assuming it's a direct child
 		collision_shape.queue_free()
 
-func shoot_at_player(position, dir):
+func shoot_at_player(pos, dir):
 	print("Shooting at player")
-	shoot.emit(position, dir)
+	
+	var bullet = bullet_scene.instantiate()
+	get_tree().root.add_child(bullet)
+	bullet.global_position = pos
+	bullet.direction = dir.normalized()
+	bullet.add_to_group("bullets")
+	
+	#var bullet = bullet_scene.instantiate()
+	#add_child(bullet)
+	#bullet.position = pos
+	#bullet.direction = dir.normalized()
+	#bullet.add_to_group("bullets")
+	
+	#shoot.emit(position, dir)
 	can_shoot = false
 	
 
@@ -128,3 +142,11 @@ func _physics_process(delta):
 
 func _on_timer_timeout():
 	can_shoot = true
+
+
+#func _on_shoot(pos, dir):
+	#var bullet = bullet_scene.instantiate()
+	#add_child(bullet)
+	#bullet.position = pos
+	#bullet.direction = dir.normalized()
+	#bullet.add_to_group("bullets")
