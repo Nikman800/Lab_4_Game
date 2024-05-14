@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://ce7c6q1u36skb"]
+[gd_scene load_steps=23 format=3 uid="uid://ce7c6q1u36skb"]
 
 [ext_resource type="Script" path="res://scripts/gamemanager.gd" id="1_30nue"]
 [ext_resource type="PackedScene" uid="uid://buqsspxla075q" path="res://scenes/player.tscn" id="1_ppmqx"]
@@ -7,7 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://dwfjvdh2j2ero" path="res://scenes/platform.tscn" id="3_v7s5c"]
 [ext_resource type="PackedScene" uid="uid://bybwh5jjgsgkl" path="res://scenes/coin.tscn" id="4_w0ket"]
 [ext_resource type="PackedScene" uid="uid://b631raxidnram" path="res://scenes/killzone.tscn" id="5_3bfb2"]
+[ext_resource type="Script" path="res://scripts/BulletManager.gd" id="5_j8uk2"]
 [ext_resource type="PackedScene" uid="uid://dlfvcmxaf158c" path="res://scenes/slime.tscn" id="6_bvobh"]
+[ext_resource type="PackedScene" uid="uid://bfre8gl33k8pr" path="res://scenes/bullet.tscn" id="6_r3681"]
 [ext_resource type="Script" path="res://scripts/TextureProgressBar.gd" id="9_k6s0f"]
 [ext_resource type="Texture2D" uid="uid://ba4q06568xka8" path="res://assets/healthbar/healthbarUnder.png" id="9_o5jqk"]
 [ext_resource type="Texture2D" uid="uid://bnx56edgawd3e" path="res://assets/healthbar/healthbarProgress.png" id="10_qihcm"]
@@ -495,6 +497,10 @@ limit_bottom = 120
 limit_smoothed = true
 position_smoothing_enabled = true
 
+[node name="BulletManager" type="Node2D" parent="."]
+script = ExtResource("5_j8uk2")
+bullet_scene = ExtResource("6_r3681")
+
 [node name="Killzone" parent="." instance=ExtResource("5_3bfb2")]
 position = Vector2(1, -18)
 
@@ -573,3 +579,4 @@ position = Vector2(-185, -112)
 position = Vector2(-183, -192)
 
 [connection signal="healthChanged" from="Player" to="CanvasLayer/Node2D/Healthbar" method="_on_player_health_changed"]
+[connection signal="shoot" from="Kreep" to="BulletManager" method="_on_kreep_shoot"]

@@ -9,3 +9,7 @@ func add_point():
 	score_label.text = "You collected " + str(score) + " coins."
 	print(score)
 	
+
+
+
+	

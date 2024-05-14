@@ -105,7 +105,7 @@ func _physics_process(delta):
 	# Emit dashChanged signal ONLY if boost has changed significantly
 	if abs(current_boost - previous_boost) >= 0.1:  # Adjust the threshold as needed
 		dashChanged.emit(current_boost) 
-		print(current_boost)
+		#print(current_boost)
 	
 	# Get the input direction: -1, 0, 1
 	var direction = Input.get_axis("move_left", "move_right")
