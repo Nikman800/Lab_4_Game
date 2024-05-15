@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
 @onready var timer = $Timer
-
+@onready var animated_sprite = $AnimatedSprite2D
+@onready var attack_area = $AttackArea
 
 const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
@@ -24,13 +25,16 @@ var boost_regen_rate = 100.0  # Boost regeneration per second
 var max_health = 3
 var current_health = max_health  # Initialize with full health
 
+#Attack variables:
+var is_attacking = false
+
 signal healthChanged
 signal dashChanged
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-@onready var animated_sprite = $AnimatedSprite2D
+
 
 func take_damage(amount):
 	current_health -= amount
@@ -48,8 +52,10 @@ func take_damage(amount):
 		collision_shape.queue_free()
 		timer.start()
 		
-
-	
+func attack():
+	if not is_attacking:  # Prevent attacking while already attacking
+		is_attacking = true
+		animated_sprite.play("attack")
 		
 
 func _physics_process(delta):
@@ -87,7 +93,7 @@ func _physics_process(delta):
 		move_and_collide(motion)
 
 		# Allow player to influence trajectory
-		var input_direction = Input.get_vector("move_left", "movea_right", "move_up", "move_down")
+		var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 		if input_direction != Vector2.ZERO:
 			dash_direction = dash_direction.lerp(input_direction.normalized(), 0.2)
 
@@ -108,6 +114,7 @@ func _physics_process(delta):
 		#print(current_boost)
 		
 	#if Input.is_action_pressed("attack"):
+		#attack()
 		
 	
 	# Get the input direction: -1, 0, 1
@@ -145,3 +152,15 @@ func _ready():
 	dashChanged.emit(current_boost)
 	
 
+
+
+func _on_animated_sprite_2d_animation_finished():
+	if animated_sprite.animation == "attack":
+		is_attacking = false
+		attack_area.monitoring = false  # Disable the hitbox
+
+
+func _on_attack_area_area_entered(area):
+	if area.is_in_group("enemy"):  # Assuming enemies are in the "enemy" group
+		var enemy = area.get_parent()
+		enemy.take_damage(1)  # Apply damage to the enemy

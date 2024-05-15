@@ -67,7 +67,7 @@ func _ready():
 	healthChanged.emit()
 	was_hitting_left_wall = ray_cast_left.is_colliding()
 	was_on_surface = ray_cast_down.is_colliding()
-	player = get_node("../Player")
+	player = get_node("../../Player")
 
 func _physics_process(delta):
 	# Check for collisions and handle rotations

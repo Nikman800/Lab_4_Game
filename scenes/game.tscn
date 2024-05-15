@@ -571,25 +571,27 @@ texture_under = ExtResource("9_o5jqk")
 texture_progress = ExtResource("12_leutx")
 script = ExtResource("13_7yexo")
 
-[node name="Kreep" parent="." instance=ExtResource("14_jrmgh")]
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Kreep" parent="Enemies" instance=ExtResource("14_jrmgh")]
 position = Vector2(-120, -64)
 
-[node name="Kreep2" parent="." instance=ExtResource("14_jrmgh")]
+[node name="Kreep2" parent="Enemies" instance=ExtResource("14_jrmgh")]
 position = Vector2(-185, -112)
 
-[node name="Kreep3" parent="." instance=ExtResource("14_jrmgh")]
+[node name="Kreep3" parent="Enemies" instance=ExtResource("14_jrmgh")]
 position = Vector2(-183, -192)
 
-[node name="Kreep4" parent="." instance=ExtResource("17_txn3s")]
+[node name="Kreep4" parent="Enemies" instance=ExtResource("17_txn3s")]
 position = Vector2(120, -192)
 
-[node name="Kreep5" parent="." instance=ExtResource("17_txn3s")]
+[node name="Kreep5" parent="Enemies" instance=ExtResource("17_txn3s")]
 position = Vector2(88, -112)
 
-[node name="Kreep6" parent="." instance=ExtResource("18_63v4s")]
+[node name="Kreep6" parent="Enemies" instance=ExtResource("18_63v4s")]
 position = Vector2(-51, -272)
 
 [connection signal="healthChanged" from="Player" to="CanvasLayer/Node2D/Healthbar" method="_on_player_health_changed"]
-[connection signal="shoot" from="Kreep" to="BulletManager" method="_on_kreep_shoot"]
-[connection signal="shoot" from="Kreep2" to="BulletManager" method="_on_kreep_2_shoot"]
-[connection signal="shoot" from="Kreep3" to="BulletManager" method="_on_kreep_3_shoot"]
+[connection signal="shoot" from="Enemies/Kreep" to="BulletManager" method="_on_kreep_shoot"]
+[connection signal="shoot" from="Enemies/Kreep2" to="BulletManager" method="_on_kreep_2_shoot"]
+[connection signal="shoot" from="Enemies/Kreep3" to="BulletManager" method="_on_kreep_3_shoot"]
