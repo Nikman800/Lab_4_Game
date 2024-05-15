@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://g2v7mnl0ofbq"]
+[gd_scene load_steps=19 format=3 uid="uid://g2v7mnl0ofbq"]
 
 [ext_resource type="Script" path="res://scripts/kreepboss.gd" id="1_qghje"]
 [ext_resource type="PackedScene" uid="uid://bfre8gl33k8pr" path="res://scenes/bullet1.tscn" id="2_w4gjw"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://brnbw331wd8rw" path="res://scenes/hurtzone.tscn" id="3_wrjej"]
 [ext_resource type="PackedScene" uid="uid://b61cl5bx3pb4i" path="res://scenes/bullet3.tscn" id="4_417gs"]
 [ext_resource type="Texture2D" uid="uid://b3xc0vsro42ym" path="res://assets/sprites/grenade-guy-sheet-alpha.png" id="4_osdcq"]
+[ext_resource type="AudioStream" uid="uid://bgthq7dqsj1kj" path="res://assets/sounds/laser1.wav" id="7_tx12g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrdgp"]
 size = Vector2(27, 31)
@@ -119,6 +120,10 @@ wait_time = 4.0
 
 [node name="Bullet3Timer" type="Timer" parent="."]
 wait_time = 5.0
+
+[node name="LaserSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_tx12g")
+bus = &"SFX"
 
 [connection signal="shoot" from="." to="." method="_on_shoot"]
 [connection signal="timeout" from="Bullet1Timer" to="." method="_on_timer_timeout"]

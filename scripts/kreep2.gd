@@ -5,6 +5,7 @@ extends CharacterBody2D
 @onready var ray_cast_down = $RayCastDown
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var timer = $Timer
+@onready var laser_sound = $LaserSound
 
 @export var bullet_scene : PackedScene
 
@@ -51,14 +52,11 @@ func shoot_at_player(pos, dir):
 	bullet.direction = dir.normalized()
 	bullet.add_to_group("bullets")
 	
-	#var bullet = bullet_scene.instantiate()
-	#add_child(bullet)
-	#bullet.position = pos
-	#bullet.direction = dir.normalized()
-	#bullet.add_to_group("bullets")
-	
 	#shoot.emit(position, dir)
 	can_shoot = false
+	
+	#Play laser audio
+	laser_sound.play()
 	
 
 func _ready():

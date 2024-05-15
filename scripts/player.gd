@@ -3,6 +3,8 @@ extends CharacterBody2D
 @onready var timer = $Timer
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var attack_area = $AttackArea
+@onready var running_sound = $RunningSound
+
 
 const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
@@ -145,12 +147,20 @@ func _physics_process(delta):
 		animated_sprite.play("jump")
 	
 	
+	#Play SFX
+	if is_on_floor() and direction != 0 and not running_sound.playing:
+		running_sound.play()
+	elif direction == 0 or not is_on_floor():
+		running_sound.stop()
+	
+	
 	if direction:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
 
 
 func _on_timer_timeout():
