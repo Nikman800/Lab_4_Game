@@ -23,7 +23,7 @@ var was_hitting_left_wall = false
 var was_on_surface = false
 
 #Health bar variables:
-var max_health = 1
+var max_health = 3
 var current_health = max_health  # Initialize with full health
 
 #shooting variables:
