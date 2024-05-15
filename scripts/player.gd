@@ -24,6 +24,7 @@ var boost_regen_rate = 100.0  # Boost regeneration per second
 #Health bar variables:
 var max_health = 3
 var current_health = max_health  # Initialize with full health
+var took_damage = false
 
 #Attack variables:
 var is_attacking = false
@@ -39,6 +40,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func take_damage(amount):
 	current_health -= amount
 	current_health = clamp(current_health, 0, max_health)
+	took_damage = true #Used to play animation for taking damage
 	healthChanged.emit()
 	#emit_signal("healthChanged", current_health)  # Notify about health change
 	print("health is now " + str(current_health))
@@ -131,6 +133,9 @@ func _physics_process(delta):
 	#Play animations
 	if is_attacking:
 		animated_sprite.play("attack")
+	elif took_damage:
+		animated_sprite.play("damage")
+		took_damage = false
 	elif is_on_floor():
 		if direction == 0:
 			animated_sprite.play("idle")
