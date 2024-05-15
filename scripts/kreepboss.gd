@@ -48,12 +48,10 @@ func take_damage(amount):
 	if current_health <= 0:
 		# Handle enemy death (e.g., game over, respawn)
 		print("Enemy has died!")  # Replace with your death logic
-		# Get and queue the CollisionShape2D for deletion
-		var collision_shape = get_node("CollisionShape2D")  # Assuming it's a direct child
-		collision_shape.queue_free()
+		self.queue_free()
 
 func shoot_at_player(pos, dir):
-	print("Shooting at player")
+	#print("Shooting at player")
 	
 	var bullet = bullet_scene.instantiate()
 	get_tree().root.add_child(bullet)
@@ -63,7 +61,7 @@ func shoot_at_player(pos, dir):
 	can_shoot1 = false
 	
 func shoot_at_player2(pos, dir):
-	print("Shooting at player")
+	#print("Shooting at player")
 	
 	var bullet = bullet_scene2.instantiate()
 	get_tree().root.add_child(bullet)
@@ -73,7 +71,7 @@ func shoot_at_player2(pos, dir):
 	can_shoot2 = false
 	
 func shoot_at_player3(pos, dir):
-	print("Shooting at player")
+	#print("Shooting at player")
 	
 	var bullet = bullet_scene3.instantiate()
 	get_tree().root.add_child(bullet)

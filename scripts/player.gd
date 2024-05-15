@@ -55,7 +55,8 @@ func take_damage(amount):
 func attack():
 	if not is_attacking:  # Prevent attacking while already attacking
 		is_attacking = true
-		animated_sprite.play("attack")
+		attack_area.monitoring = true
+		
 		
 
 func _physics_process(delta):
@@ -101,8 +102,6 @@ func _physics_process(delta):
 		current_boost -= dash_depletion_rate * delta # Deplete boost based on rate and delta time
 		current_boost = clamp(current_boost, 0, max_boost)  # Clamp boost to zero
 
-		#dashChanged.emit(current_boost) 
-
 	# Regenerate boost if grounded and not full
 	if is_grounded and current_boost < max_boost:
 		current_boost += boost_regen_rate * delta
@@ -113,8 +112,10 @@ func _physics_process(delta):
 		dashChanged.emit(current_boost) 
 		#print(current_boost)
 		
-	#if Input.is_action_pressed("attack"):
-		#attack()
+	#Attack code
+	if Input.is_action_pressed("attack"):
+		print("Player Attacking...")
+		attack()
 		
 	
 	# Get the input direction: -1, 0, 1
@@ -122,11 +123,15 @@ func _physics_process(delta):
 	
 	if direction > 0:
 		animated_sprite.flip_h = false
+		attack_area.scale.x = 1 # Flipped scale (facing right)
 	elif direction < 0:
 		animated_sprite.flip_h = true
+		attack_area.scale.x = -1 # Flipped scale (facing left)
 	
 	#Play animations
-	if is_on_floor():
+	if is_attacking:
+		animated_sprite.play("attack")
+	elif is_on_floor():
 		if direction == 0:
 			animated_sprite.play("idle")
 		else:
@@ -161,6 +166,8 @@ func _on_animated_sprite_2d_animation_finished():
 
 
 func _on_attack_area_area_entered(area):
+	print("Area entered: " + area.name + ", is in 'enemy' group: " + str(area.is_in_group("enemy")))
 	if area.is_in_group("enemy"):  # Assuming enemies are in the "enemy" group
 		var enemy = area.get_parent()
+		print("Enemy has been hit!!")
 		enemy.take_damage(1)  # Apply damage to the enemy

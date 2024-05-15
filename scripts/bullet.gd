@@ -18,6 +18,6 @@ func _on_timer_timeout():
 
 
 func _on_body_entered(body):
-	print(body.name)
+	#print(body.name)
 	if body.has_method("take_damage") and body.name == "Player":
 		body.take_damage(1)  # Adjust damage amount as needed

@@ -47,11 +47,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ikcpy"]
 size = Vector2(14, 15)
 
-[node name="Kreep" type="CharacterBody2D"]
+[node name="Kreep" type="CharacterBody2D" groups=["enemy"]]
 script = ExtResource("1_ly2b3")
 bullet_scene = ExtResource("2_b4yky")
 
-[node name="Hurtzone" parent="." instance=ExtResource("2_a01jx")]
+[node name="Hurtzone" parent="." groups=["enemy"] instance=ExtResource("2_a01jx")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtzone"]
 position = Vector2(0, -7.5)
