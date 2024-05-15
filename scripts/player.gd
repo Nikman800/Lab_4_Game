@@ -87,7 +87,7 @@ func _physics_process(delta):
 		move_and_collide(motion)
 
 		# Allow player to influence trajectory
-		var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+		var input_direction = Input.get_vector("move_left", "movea_right", "move_up", "move_down")
 		if input_direction != Vector2.ZERO:
 			dash_direction = dash_direction.lerp(input_direction.normalized(), 0.2)
 
@@ -106,6 +106,9 @@ func _physics_process(delta):
 	if abs(current_boost - previous_boost) >= 0.1:  # Adjust the threshold as needed
 		dashChanged.emit(current_boost) 
 		#print(current_boost)
+		
+	#if Input.is_action_pressed("attack"):
+		
 	
 	# Get the input direction: -1, 0, 1
 	var direction = Input.get_axis("move_left", "move_right")

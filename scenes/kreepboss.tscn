@@ -112,10 +112,10 @@ position = Vector2(0.5, -15.5)
 shape = SubResource("RectangleShape2D_ikcpy")
 
 [node name="Bullet1Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 3.0
 
 [node name="Bullet2Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 4.0
 
 [node name="Bullet3Timer" type="Timer" parent="."]
 wait_time = 5.0

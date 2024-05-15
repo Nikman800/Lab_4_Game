@@ -145,26 +145,30 @@ func _physics_process(delta):
 	move_and_slide()
 	
 	#Implement Shooting logic
+	
+	var offset = Vector2(0, -15).rotated(rotation)
+	
 	#Bullet 1
-	if position.distance_to(player.position) <= shooting_distance and can_shoot1:
-		bullet_direction = (player.position - position).normalized()
+	if position.distance_to(player.position + offset) <= shooting_distance and can_shoot1:
+		bullet_direction = ((player.position + offset) - position).normalized()
 		bullet_1_timer.start()
 		#can_shoot = false
-		shoot_at_player(self.position, bullet_direction)
+		shoot_at_player(self.position + offset, bullet_direction)
 		
 	#Bullet 2
-	if position.distance_to(player.position) <= shooting_distance and can_shoot2:
+	if position.distance_to(player.position + offset) <= shooting_distance and can_shoot2:
 		bullet_direction = velocity.normalized()
 		bullet_2_timer.start()
-		shoot_at_player2(self.position, bullet_direction)
+		shoot_at_player2(self.position + offset, bullet_direction)
 
 		
 	#Bullet 3
-	if position.distance_to(player.position) <= shooting_distance and can_shoot3:
-		bullet_direction = (player.position - position).normalized()
+	if position.distance_to(player.position + offset) <= shooting_distance and can_shoot3:
+		
+		bullet_direction = (player.position - (position + offset)).normalized()
 		bullet_3_timer.start()
 		#can_shoot = false
-		shoot_at_player3(self.position, bullet_direction)
+		shoot_at_player3(self.position + offset, bullet_direction)
 		
 		
 	# Store the previous state to detect changes
