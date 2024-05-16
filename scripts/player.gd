@@ -3,6 +3,12 @@ extends CharacterBody2D
 @onready var timer = $Timer
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var attack_area = $AttackArea
+@onready var running_sound = $RunningSound
+@onready var sword_slash = $SwordSlash
+@onready var sword_hit = $SwordHit
+@onready var player_hurt = $PlayerHurt
+@onready var player_death = $PlayerDeath
+
 
 const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
@@ -41,6 +47,8 @@ func take_damage(amount):
 	current_health -= amount
 	current_health = clamp(current_health, 0, max_health)
 	took_damage = true #Used to play animation for taking damage
+	if current_health > 0:
+		player_hurt.play()
 	healthChanged.emit()
 	#emit_signal("healthChanged", current_health)  # Notify about health change
 	print("health is now " + str(current_health))
@@ -48,6 +56,7 @@ func take_damage(amount):
 	if current_health <= 0:
 		# Handle player death (e.g., game over, respawn)
 		print("Player has died!")  # Replace with your death logic
+		player_death.play()
 		Engine.time_scale = 0.5
 		# Get and queue the CollisionShape2D for deletion
 		var collision_shape = get_node("CollisionShape2D")  # Assuming it's a direct child
@@ -58,6 +67,7 @@ func attack():
 	if not is_attacking:  # Prevent attacking while already attacking
 		is_attacking = true
 		attack_area.monitoring = true
+		sword_slash.play()
 		
 		
 
@@ -145,6 +155,13 @@ func _physics_process(delta):
 		animated_sprite.play("jump")
 	
 	
+	#Play SFX
+	if is_on_floor() and direction != 0 and not running_sound.playing:
+		running_sound.play()
+	elif direction == 0 or not is_on_floor():
+		running_sound.stop()
+	
+	
 	if direction:
 		velocity.x = direction * SPEED
 	else:
@@ -153,9 +170,11 @@ func _physics_process(delta):
 	move_and_slide()
 
 
+
 func _on_timer_timeout():
 	Engine.time_scale = 1.0
-	get_tree().reload_current_scene()
+	#get_tree().reload_current_scene()
+	get_tree().change_scene_to_file("res://scenes/mainmenu.tscn")
 	
 func _ready():
 	healthChanged.emit()
@@ -176,3 +195,4 @@ func _on_attack_area_area_entered(area):
 		var enemy = area.get_parent()
 		print("Enemy has been hit!!")
 		enemy.take_damage(1)  # Apply damage to the enemy
+		sword_hit.play()

@@ -7,6 +7,7 @@ extends CharacterBody2D
 @onready var bullet_1_timer = $Bullet1Timer
 @onready var bullet_2_timer = $Bullet2Timer
 @onready var bullet_3_timer = $Bullet3Timer
+@onready var laser_sound = $LaserSound
 
 
 
@@ -48,7 +49,10 @@ func take_damage(amount):
 	if current_health <= 0:
 		# Handle enemy death (e.g., game over, respawn)
 		print("Enemy has died!")  # Replace with your death logic
-		self.queue_free()
+		#self.queue_free()
+		call_deferred("queue_free")
+		get_tree().change_scene_to_file("res://scenes/mainmenu.tscn")
+		
 
 func shoot_at_player(pos, dir):
 	#print("Shooting at player")
@@ -60,6 +64,9 @@ func shoot_at_player(pos, dir):
 	bullet.add_to_group("bullets")
 	can_shoot1 = false
 	
+	#Play laser audio
+	laser_sound.play()
+	
 func shoot_at_player2(pos, dir):
 	#print("Shooting at player")
 	
@@ -70,6 +77,9 @@ func shoot_at_player2(pos, dir):
 	bullet.add_to_group("bullets")
 	can_shoot2 = false
 	
+	#Play laser audio
+	laser_sound.play()
+	
 func shoot_at_player3(pos, dir):
 	#print("Shooting at player")
 	
@@ -79,6 +89,9 @@ func shoot_at_player3(pos, dir):
 	bullet.direction = dir.normalized()
 	bullet.add_to_group("bullets")
 	can_shoot3 = false
+	
+	#Play laser audio
+	laser_sound.play()
 
 func _ready():
 	healthChanged.emit()
