@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://co3icnkqihag6"]
+
+[ext_resource type="Script" path="res://scenes/Intro.gd" id="1_6xjyp"]
+[ext_resource type="Texture2D" uid="uid://cbifb0nfs22it" path="res://assets/sprites/blue background.png" id="2_0crw6"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="back" type="Button" parent="."]
+layout_mode = 2
+offset_left = 451.0
+offset_top = 431.0
+offset_right = 635.0
+offset_bottom = 476.0
+theme_override_font_sizes/font_size = 20
+text = "Continue to Game
+"
+script = ExtResource("1_6xjyp")
+
+[node name="BlueBackground" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(580, 583)
+scale = Vector2(5.81875, 5.81875)
+texture = ExtResource("2_0crw6")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 74.0
+offset_right = 1137.0
+offset_bottom = 386.0
+theme_override_font_sizes/normal_font_size = 30
+text = "Upon defeating the leader of the Kreeps you find the controller on his suit and use it to open the blue door that was closed before you. Beyond the door lies a magnificant ship that is far greater than the one you once had. As you set off in your new ship you prepare for your mission that was derailed by your previous misfortune. Looking back, although having lost time, you have gained a powerful asset that just might make the deciding difference in the upcoming battle. "
+
+[connection signal="pressed" from="back" to="back" method="_on_pressed"]
