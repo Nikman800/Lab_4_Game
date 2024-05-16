@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bmkfmh41whq8x"]
+[gd_scene load_steps=3 format=3 uid="uid://bmkfmh41whq8x"]
 
 [ext_resource type="Script" path="res://scenes/controls.gd" id="1_hm4lk"]
+[ext_resource type="Texture2D" uid="uid://b3ux7in2aoebe" path="res://assets/sprites/fancy space background.png" id="2_uaja8"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -24,27 +25,33 @@ layout_mode = 2
 text = "Back
 "
 
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 290.0
-offset_top = 78.0
-offset_right = 449.0
-offset_bottom = 231.0
+offset_left = 12.0
+offset_top = 35.0
+offset_right = 924.0
+offset_bottom = 647.0
+theme_override_font_sizes/normal_font_size = 30
+text = "wasd and mouse:
+wasd for movement
+left click for boost
+right click to attack
 
-[node name="Label" type="Label" parent="AspectRatioContainer"]
-layout_mode = 2
-text = "Regular:
-Left: a
-Right: d
-Jump: spacebar
+arrow keys:
+up down left right arrows for movement
+'z' for boost
+'x' for attack
 
-Dashing (holding 'z'):
-Up: w
-Down: s
-Left: a
-Right: d
+Spacebar, up arrow, 'w' all allow the player to jump.
 
-When dashing on the ground, your dash bar does not decrease.
+Your dash bar only increases while touching the ground. 
+Dashing can be done in ALL directions.
 "
+
+[node name="FancySpaceBackground" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(624, 633)
+scale = Vector2(6.715, 6.715)
+texture = ExtResource("2_uaja8")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
