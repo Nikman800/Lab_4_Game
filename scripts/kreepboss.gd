@@ -49,7 +49,10 @@ func take_damage(amount):
 	if current_health <= 0:
 		# Handle enemy death (e.g., game over, respawn)
 		print("Enemy has died!")  # Replace with your death logic
-		self.queue_free()
+		#self.queue_free()
+		call_deferred("queue_free")
+		get_tree().change_scene_to_file("res://scenes/mainmenu.tscn")
+		
 
 func shoot_at_player(pos, dir):
 	#print("Shooting at player")
