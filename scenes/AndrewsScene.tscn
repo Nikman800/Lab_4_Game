@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://ckujed4xep6k6"]
+[gd_scene load_steps=6 format=3 uid="uid://ckujed4xep6k6"]
 
 [ext_resource type="Texture2D" uid="uid://8rh8vh2psuxg" path="res://assets/sprites/world_tileset.png" id="1_x664m"]
 [ext_resource type="PackedScene" uid="uid://buqsspxla075q" path="res://scenes/player.tscn" id="2_240lo"]
+[ext_resource type="Texture2D" uid="uid://cbifb0nfs22it" path="res://assets/sprites/blue background.png" id="3_81qbx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fk1l3"]
 texture = ExtResource("1_x664m")
@@ -441,3 +442,35 @@ layout_mode = 2
 
 [node name="Play" type="Button" parent="Main Menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
+
+[node name="BlueBackground" type="Sprite2D" parent="."]
+position = Vector2(4, 44)
+texture = ExtResource("3_81qbx")
+
+[node name="BlueBackground" type="Sprite2D" parent="BlueBackground"]
+position = Vector2(200, 0)
+texture = ExtResource("3_81qbx")
+
+[node name="BlueBackground2" type="Sprite2D" parent="BlueBackground"]
+position = Vector2(0, -200)
+texture = ExtResource("3_81qbx")
+
+[node name="BlueBackground" type="Sprite2D" parent="BlueBackground/BlueBackground2"]
+position = Vector2(200, 0)
+texture = ExtResource("3_81qbx")
+
+[node name="BlueBackground3" type="Sprite2D" parent="BlueBackground"]
+position = Vector2(400, 0)
+texture = ExtResource("3_81qbx")
+
+[node name="BlueBackground" type="Sprite2D" parent="BlueBackground/BlueBackground3"]
+position = Vector2(200, 0)
+texture = ExtResource("3_81qbx")
+
+[node name="BlueBackground2" type="Sprite2D" parent="BlueBackground/BlueBackground3"]
+position = Vector2(0, -200)
+texture = ExtResource("3_81qbx")
+
+[node name="BlueBackground" type="Sprite2D" parent="BlueBackground/BlueBackground3/BlueBackground2"]
+position = Vector2(200, 0)
+texture = ExtResource("3_81qbx")
