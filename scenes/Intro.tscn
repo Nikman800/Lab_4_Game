@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://qx8bq4jijpjd"]
+[gd_scene load_steps=3 format=3 uid="uid://qx8bq4jijpjd"]
+
+[ext_resource type="Script" path="res://scenes/Intro.gd" id="1_megjw"]
+[ext_resource type="Texture2D" uid="uid://cbifb0nfs22it" path="res://assets/sprites/blue background.png" id="2_3dayr"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -7,3 +10,31 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="back" type="Button" parent="."]
+layout_mode = 2
+offset_left = 451.0
+offset_top = 431.0
+offset_right = 635.0
+offset_bottom = 476.0
+theme_override_font_sizes/font_size = 20
+text = "Continue to Game
+"
+script = ExtResource("1_megjw")
+
+[node name="BlueBackground" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(580, 583)
+scale = Vector2(5.81875, 5.81875)
+texture = ExtResource("2_3dayr")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 74.0
+offset_right = 1137.0
+offset_bottom = 386.0
+theme_override_font_sizes/normal_font_size = 30
+text = "You are Alex Xander. A brave hero who was traveling accross the galaxy when your ship was unexpectedy struck by a projectile. You escaped the burning ship by ejecting just before the ship blew up. Upon looking around you find yourself on an astroid belt in the dominion of the Kreeps. From your limited knowledge of the Kreep society, you know that if they have a ship, you will have to defeat their leader to get access to it. It is up to you to find their leader and defeat him."
+
+[connection signal="pressed" from="back" to="back" method="_on_pressed"]
