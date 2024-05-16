@@ -4,6 +4,8 @@ extends CharacterBody2D
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var attack_area = $AttackArea
 @onready var running_sound = $RunningSound
+@onready var sword_slash = $SwordSlash
+@onready var sword_hit = $SwordHit
 
 
 const SPEED = 130.0
@@ -60,6 +62,7 @@ func attack():
 	if not is_attacking:  # Prevent attacking while already attacking
 		is_attacking = true
 		attack_area.monitoring = true
+		sword_slash.play()
 		
 		
 
@@ -187,3 +190,4 @@ func _on_attack_area_area_entered(area):
 		var enemy = area.get_parent()
 		print("Enemy has been hit!!")
 		enemy.take_damage(1)  # Apply damage to the enemy
+		sword_hit.play()
