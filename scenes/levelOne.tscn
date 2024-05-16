@@ -432,10 +432,10 @@ unique_name_in_owner = true
 script = ExtResource("1_7genn")
 
 [node name="ScoreLabel" type="Label" parent="GameManager"]
-offset_left = 535.0
-offset_top = -45.0
-offset_right = 697.0
-offset_bottom = -21.0
+offset_left = 4142.0
+offset_top = -2887.0
+offset_right = 4304.0
+offset_bottom = -2863.0
 theme_override_fonts/font = ExtResource("2_dfxdk")
 theme_override_font_sizes/font_size = 8
 text = "You collected X coins"
@@ -1076,7 +1076,7 @@ texture = ExtResource("17_6dhdh")
 
 [node name="BackgroundForGame19" type="Sprite2D" parent="Background Squares"]
 z_index = -5
-position = Vector2(396.521, 199.095)
+position = Vector2(1454.7, -548.921)
 texture = ExtResource("17_6dhdh")
 
 [node name="BackgroundForGame20" type="Sprite2D" parent="Background Squares"]
@@ -1197,6 +1197,11 @@ texture = ExtResource("17_6dhdh")
 [node name="BackgroundForGame43" type="Sprite2D" parent="Background Squares"]
 z_index = -5
 position = Vector2(396.521, 397.843)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame43" type="Sprite2D" parent="Background Squares/BackgroundForGame43"]
+z_index = -5
+position = Vector2(0.417068, -199.096)
 texture = ExtResource("17_6dhdh")
 
 [node name="BackgroundForGame44" type="Sprite2D" parent="Background Squares"]
@@ -1801,7 +1806,7 @@ texture = ExtResource("17_6dhdh")
 
 [node name="BackgroundForGame20" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
 z_index = -5
-position = Vector2(792.763, -199.304)
+position = Vector2(1060.82, -162.909)
 texture = ExtResource("17_6dhdh")
 
 [node name="BackgroundForGame21" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
