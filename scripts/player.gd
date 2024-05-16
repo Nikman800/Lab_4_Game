@@ -6,6 +6,8 @@ extends CharacterBody2D
 @onready var running_sound = $RunningSound
 @onready var sword_slash = $SwordSlash
 @onready var sword_hit = $SwordHit
+@onready var player_hurt = $PlayerHurt
+@onready var player_death = $PlayerDeath
 
 
 const SPEED = 130.0
@@ -45,6 +47,8 @@ func take_damage(amount):
 	current_health -= amount
 	current_health = clamp(current_health, 0, max_health)
 	took_damage = true #Used to play animation for taking damage
+	if current_health > 0:
+		player_hurt.play()
 	healthChanged.emit()
 	#emit_signal("healthChanged", current_health)  # Notify about health change
 	print("health is now " + str(current_health))
@@ -52,6 +56,7 @@ func take_damage(amount):
 	if current_health <= 0:
 		# Handle player death (e.g., game over, respawn)
 		print("Player has died!")  # Replace with your death logic
+		player_death.play()
 		Engine.time_scale = 0.5
 		# Get and queue the CollisionShape2D for deletion
 		var collision_shape = get_node("CollisionShape2D")  # Assuming it's a direct child
