@@ -1,26 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://ml7p2nhgwuid"]
+[gd_scene load_steps=3 format=3 uid="uid://ml7p2nhgwuid"]
 
 [ext_resource type="Script" path="res://scenes/mainmenu.gd" id="1_3nbmv"]
+[ext_resource type="Texture2D" uid="uid://cbifb0nfs22it" path="res://assets/sprites/blue background.png" id="2_g87pl"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 127.0
-offset_top = 324.0
-offset_right = 127.0
-offset_bottom = 324.0
+offset_left = 153.0
+offset_top = 341.0
+offset_right = 153.0
+offset_bottom = 341.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3nbmv")
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
 layout_mode = 0
-offset_left = 283.0
-offset_top = -103.0
-offset_right = 536.0
-offset_bottom = 181.0
+offset_left = 290.0
+offset_top = -279.0
+offset_right = 566.0
+offset_bottom = 372.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="AspectRatioContainer"]
 layout_mode = 2
@@ -40,6 +41,12 @@ text = "Credits"
 [node name="Quit" type="Button" parent="AspectRatioContainer/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
+
+[node name="BlueBackground" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(480, -208)
+scale = Vector2(8.70399, 8.70399)
+texture = ExtResource("2_g87pl")
 
 [connection signal="pressed" from="AspectRatioContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="AspectRatioContainer/VBoxContainer/Controls" to="." method="_on_button_pressed"]

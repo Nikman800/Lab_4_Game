@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://deovkn106qssw"]
+[gd_scene load_steps=3 format=3 uid="uid://deovkn106qssw"]
 
 [ext_resource type="Script" path="res://scenes/credits.gd" id="1_ok35r"]
+[ext_resource type="Texture2D" uid="uid://b3ux7in2aoebe" path="res://assets/sprites/fancy space background.png" id="2_mgrhp"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -23,5 +24,34 @@ layout_mode = 2
 layout_mode = 2
 text = "Back
 "
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 245.0
+offset_right = 1090.0
+offset_bottom = 669.0
+theme_override_font_sizes/normal_font_size = 20
+text = "Game mechanics: Nikhil Mandke
+Level one: Andrew Peterson
+Menu Implementation: Andrew Peterson
+Sound effect implementation: Nikhil Mandke
+
+Backgrounds greated with this generator: https://deep-fold.itch.io/space-background-generator
+World sprites from this youtube video: https://www.youtube.com/watch?v=LOhfqjmasi0
+Player sprite created by Andrew Peterson with inspiration from the sprite in the youtube video linked above.
+Sound Effects:
+		Background: https://opengameart.org/content/another-space-background-track
+		Walking: https://opengameart.org/content/footsteps-leather-cloth-armor
+		Enemy Shooting: 
+		Player Attack:
+		Player Dieing: https://opengameart.org/content/mutant-death
+				"
+
+[node name="FancySpaceBackground" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(604, -63)
+scale = Vector2(8.26773, 8.26773)
+texture = ExtResource("2_mgrhp")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
