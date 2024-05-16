@@ -984,6 +984,11 @@ scale = Vector2(1.79625, 1.79625)
 z_index = -5
 texture = ExtResource("17_6dhdh")
 
+[node name="BackgroundForGame" type="Sprite2D" parent="Background Squares/BackgroundForGame"]
+z_index = -5
+position = Vector2(2012.53, -333.473)
+texture = ExtResource("17_6dhdh")
+
 [node name="BackgroundForGame2" type="Sprite2D" parent="Background Squares"]
 z_index = -5
 position = Vector2(198.191, 1.19209e-07)
@@ -1286,7 +1291,7 @@ texture = ExtResource("17_6dhdh")
 
 [node name="BackgroundForGame14" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
 z_index = -5
-position = Vector2(792.763, -795.338)
+position = Vector2(1783.79, -1788.52)
 texture = ExtResource("17_6dhdh")
 
 [node name="BackgroundForGame15" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
