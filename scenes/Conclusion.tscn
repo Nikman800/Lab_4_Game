@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://co3icnkqihag6"]
 
-[ext_resource type="Script" path="res://scenes/Intro.gd" id="1_6xjyp"]
+[ext_resource type="Script" path="res://scripts/conclusion.gd" id="1_lc7jk"]
 [ext_resource type="Texture2D" uid="uid://cbifb0nfs22it" path="res://assets/sprites/blue background.png" id="2_0crw6"]
 
 [node name="Control" type="Control"]
@@ -20,7 +20,7 @@ offset_bottom = 476.0
 theme_override_font_sizes/font_size = 20
 text = "Continue to Game
 "
-script = ExtResource("1_6xjyp")
+script = ExtResource("1_lc7jk")
 
 [node name="BlueBackground" type="Sprite2D" parent="."]
 z_index = -5
