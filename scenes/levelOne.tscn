@@ -976,28 +976,967 @@ position = Vector2(3695, -144)
 [node name="Kreep117" parent="Enemies" instance=ExtResource("15_bnle2")]
 position = Vector2(4500, -4230)
 
-[node name="BackgroundForGame" type="Sprite2D" parent="."]
-z_index = -5
+[node name="Background Squares" type="Node2D" parent="."]
 position = Vector2(-31, -356)
 scale = Vector2(1.79625, 1.79625)
+
+[node name="BackgroundForGame" type="Sprite2D" parent="Background Squares"]
+z_index = -5
 texture = ExtResource("17_6dhdh")
 
-[node name="BackgroundForGame2" type="Sprite2D" parent="."]
+[node name="BackgroundForGame2" type="Sprite2D" parent="Background Squares"]
 z_index = -5
-position = Vector2(328, -356)
-scale = Vector2(1.79625, 1.79625)
+position = Vector2(198.191, 1.19209e-07)
 texture = ExtResource("17_6dhdh")
 
-[node name="BackgroundForGame3" type="Sprite2D" parent="."]
+[node name="BackgroundForGame3" type="Sprite2D" parent="Background Squares"]
 z_index = -5
-position = Vector2(328, -715)
-scale = Vector2(1.79625, 1.79625)
+position = Vector2(0.347921, -198.4)
 texture = ExtResource("17_6dhdh")
 
-[node name="BackgroundForGame4" type="Sprite2D" parent="."]
+[node name="BackgroundForGame4" type="Sprite2D" parent="Background Squares"]
 z_index = -5
-position = Vector2(-31, -714)
-scale = Vector2(1.79625, 1.79625)
+position = Vector2(198.539, -198.4)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame5" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(396.173, -3.48091e-05)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame6" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(594.363, -3.48091e-05)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame7" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(396.521, -198.4)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame8" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(594.711, -198.4)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame9" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(0.347923, -396.938)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame10" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(198.539, -396.938)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame11" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(0.695843, -595.338)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame12" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(198.887, -595.338)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame13" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(396.521, -396.938)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame14" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(594.711, -396.938)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame15" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(396.868, -595.338)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame16" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(595.059, -595.338)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame17" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(0.347919, 199.095)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame18" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(198.539, 199.095)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame19" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(396.521, 199.095)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame20" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(594.711, 199.095)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame21" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(792.554, 6.86646e-05)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame22" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(990.745, 6.86646e-05)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame23" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(792.902, -198.399)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame24" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(991.093, -198.399)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame25" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(1188.73, 3.33786e-05)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame26" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(1386.92, 3.33786e-05)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame27" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(1189.07, -198.399)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame28" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(1387.27, -198.399)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame29" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(792.902, -396.938)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame30" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(991.093, -396.938)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame31" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(793.25, -595.338)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame32" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(991.441, -595.338)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame33" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(1189.07, -396.938)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame34" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(1387.27, -396.938)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame35" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(1189.42, -595.338)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame36" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(1387.61, -595.338)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame37" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(792.902, 199.095)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame38" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(991.093, 199.095)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame39" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(1189.07, 199.095)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame40" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(1387.27, 199.095)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame41" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(0.347919, 397.843)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame42" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(198.539, 397.843)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame43" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(396.521, 397.843)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame44" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(594.711, 397.843)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame45" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(792.902, 397.843)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame46" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(991.093, 397.843)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame47" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(1189.07, 397.843)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame48" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(1387.27, 397.843)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(198.052, -398.4)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame2" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(396.242, -398.4)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame3" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(198.4, -596.799)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame4" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(396.59, -596.799)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame5" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(594.224, -398.4)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame6" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(792.415, -398.4)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame7" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(594.572, -596.799)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame8" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(792.763, -596.799)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame9" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(198.4, -795.338)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame10" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(396.59, -795.338)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame11" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(198.748, -993.737)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame12" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(396.938, -993.737)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame13" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(594.572, -795.338)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame14" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(792.763, -795.338)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame15" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(594.92, -993.737)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame16" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(793.111, -993.737)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame17" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(198.4, -199.304)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame18" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(396.59, -199.304)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame19" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(594.572, -199.304)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame20" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(792.763, -199.304)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame21" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(990.606, -398.4)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame22" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(1188.8, -398.4)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame23" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(990.954, -596.799)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame24" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(1189.14, -596.799)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame25" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(1386.78, -398.4)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame26" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(1584.97, -398.4)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame27" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(1387.13, -596.799)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame28" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(1585.32, -596.799)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame29" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(990.954, -795.338)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame30" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(1189.14, -795.338)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame31" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(991.302, -993.737)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame32" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(1189.49, -993.737)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame33" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(1387.13, -795.338)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame34" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(1585.32, -795.338)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame35" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(1387.47, -993.737)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame36" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(1585.66, -993.737)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame37" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(990.954, -199.304)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame38" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(1189.14, -199.304)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame39" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(1387.13, -199.304)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame40" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(1585.32, -199.304)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame41" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(198.4, -0.556725)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame42" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(396.59, -0.556725)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame43" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(594.572, -0.556786)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame44" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(792.763, -0.556786)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame45" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(990.954, -0.556664)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame46" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(1189.14, -0.556664)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame47" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(1387.13, -0.556694)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame48" type="Sprite2D" parent="Background Squares/BackgroundForGame48"]
+z_index = -5
+position = Vector2(1585.32, -0.556694)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame49" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(0.347919, -1191.37)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame50" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(198.539, -1191.37)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame51" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(0.695843, -1389.77)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame52" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(198.887, -1389.77)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame53" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(396.521, -1191.37)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame54" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(594.711, -1191.37)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame55" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(396.868, -1389.77)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame56" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(595.059, -1389.77)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame57" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(0.695843, -1588.31)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame58" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(198.887, -1588.31)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame59" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(1.04377, -1786.71)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame60" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(199.235, -1786.71)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame61" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(396.868, -1588.31)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame62" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(595.059, -1588.31)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame63" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(397.216, -1786.71)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame64" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(595.407, -1786.71)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame65" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(0.695835, -992.276)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame66" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(198.887, -992.276)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame67" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(396.868, -992.276)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame68" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(595.059, -992.276)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame69" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(792.902, -1191.37)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame70" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(991.093, -1191.37)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame71" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(793.25, -1389.77)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame72" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(991.441, -1389.77)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame73" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(1189.07, -1191.37)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame74" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(1387.27, -1191.37)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame75" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(1189.42, -1389.77)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame76" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(1387.61, -1389.77)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame77" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(793.25, -1588.31)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame78" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(991.441, -1588.31)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame79" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(793.598, -1786.71)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame80" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(991.789, -1786.71)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame81" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(1189.42, -1588.31)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame82" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(1387.61, -1588.31)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame83" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(1189.77, -1786.71)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame84" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(1387.96, -1786.71)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame85" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(793.25, -992.276)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame86" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(991.441, -992.276)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame87" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(1189.42, -992.276)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame88" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(1387.61, -992.276)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame89" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(0.695835, -793.528)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame90" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(198.887, -793.528)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame91" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(396.868, -793.528)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame92" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(595.059, -793.528)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame93" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(793.25, -793.528)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame94" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(991.441, -793.528)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame95" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(1189.42, -793.528)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame96" type="Sprite2D" parent="Background Squares"]
+z_index = -5
+position = Vector2(1387.61, -793.528)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(198.052, -398.4)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame2" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(396.242, -398.4)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame3" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(198.4, -596.799)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame4" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(396.59, -596.799)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame5" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(594.224, -398.4)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame6" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(792.415, -398.4)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame7" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(594.572, -596.799)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame8" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(792.763, -596.799)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame9" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(198.4, -795.338)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame10" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(396.59, -795.338)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame11" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(198.748, -993.737)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame12" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(396.938, -993.737)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame13" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(594.572, -795.338)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame14" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(792.763, -795.338)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame15" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(594.92, -993.737)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame16" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(793.111, -993.737)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame17" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(198.4, -199.304)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame18" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(396.59, -199.304)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame19" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(594.572, -199.304)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame20" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(792.763, -199.304)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame21" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(990.606, -398.4)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame22" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(1188.8, -398.4)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame23" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(990.954, -596.799)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame24" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(1189.14, -596.799)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame25" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(1386.78, -398.4)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame26" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(1584.97, -398.4)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame27" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(1387.13, -596.799)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame28" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(1585.32, -596.799)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame29" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(990.954, -795.338)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame30" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(1189.14, -795.338)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame31" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(991.302, -993.737)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame32" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(1189.49, -993.737)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame33" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(1387.13, -795.338)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame34" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(1585.32, -795.338)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame35" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(1387.47, -993.737)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame36" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(1585.66, -993.737)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame37" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(990.954, -199.304)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame38" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(1189.14, -199.304)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame39" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(1387.13, -199.304)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame40" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(1585.32, -199.304)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame41" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(198.4, -0.556725)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame42" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(396.59, -0.556725)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame43" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(594.572, -0.556786)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame44" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(792.763, -0.556786)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame45" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(990.954, -0.556664)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame46" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(1189.14, -0.556664)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame47" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(1387.13, -0.556694)
+texture = ExtResource("17_6dhdh")
+
+[node name="BackgroundForGame48" type="Sprite2D" parent="Background Squares/BackgroundForGame96"]
+z_index = -5
+position = Vector2(1585.32, -0.556694)
 texture = ExtResource("17_6dhdh")
 
 [connection signal="healthChanged" from="Player" to="CanvasLayer/Node2D/Healthbar" method="_on_player_health_changed"]
