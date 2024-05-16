@@ -35,6 +35,7 @@ var took_damage = false
 #Attack variables:
 var is_attacking = false
 
+
 signal healthChanged
 signal dashChanged
 
@@ -179,6 +180,7 @@ func _on_timer_timeout():
 func _ready():
 	healthChanged.emit()
 	dashChanged.emit(current_boost)
+	attack_area.monitoring = false  # Disable the hitbox
 	
 
 
